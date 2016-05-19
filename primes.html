@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+		<style>
+			pre {
+				background-color: rgb(239, 240, 241);
+			}
+		</style>
+	</head>
+	<body>
+		<p>The sum of the first 100 numbers:</p>
+		<pre>
+			const sum = _.chain(_.range(1, 101))
+				.reduce((memo, val) => memo + val, 0)
+				.value();
+
+			document.write(sum);
+		</pre>
+		<script>
+			const sum = _.chain(_.range(1, 101))
+				.reduce((memo, val) => memo + val, 0)
+				.value();
+
+			document.write(sum);
+		</script>
+		<p>The sum of the first 100 primes:</p>
+		<pre>
+			function isPrime(number) {
+					var start = 2;
+					while (start <= Math.sqrt(number)) {
+							if (number % start++ < 1) return false;
+					}
+					return number > 1;
+			}
+
+			const sum2 = _.chain(_.range(1, 100000)) // what should stop be?
+				.filter(isPrime)
+				.first(100)
+				.reduce((memo, val) => memo + val, 0)
+				.value();
+
+				document.write(sum2);
+		</pre>
+		<script>
+			function isPrime(number) {
+					var start = 2;
+					while (start <= Math.sqrt(number)) {
+							if (number % start++ < 1) return false;
+					}
+					return number > 1;
+			}
+
+			const sum2 = _.chain(_.range(1, 100000)) // what should stop be?
+				.filter(isPrime)
+				.first(100)
+				.reduce((memo, val) => memo + val, 0)
+				.value();
+
+				document.write(sum2);
+		</script>
+	</body>
+</html>

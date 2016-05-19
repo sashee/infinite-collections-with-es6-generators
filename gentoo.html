@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.8.0/polyfill.js"></script>
+		<script src="https://cdn.rawgit.com/sashee/gentoo/4.0.1/lib/gentoo.js"></script>
+		<style>
+			pre {
+				background-color: rgb(239, 240, 241);
+			}
+		</style>
+	</head>
+	<body>
+		<p>The sum of the first 100 primes using the Gentoo library</p>
+		<pre>
+			function isPrime(number) {
+					var start = 2;
+					while (start <= Math.sqrt(number)) {
+							if (number % start++ < 1) return false;
+					}
+					return number > 1;
+			}
+
+			const sum =
+				gentoo.chain(gentoo.range(1, Number.POSITIVE_INFINITY))
+					.filter(isPrime)
+					.limit(100)
+					.reduce((memo, val) => memo + val, 0)
+					.value()
+
+			document.write(sum);
+		</pre>
+		<script>
+			function isPrime(number) {
+					var start = 2;
+					while (start <= Math.sqrt(number)) {
+							if (number % start++ < 1) return false;
+					}
+					return number > 1;
+			}
+
+			const sum =
+				gentoo.chain(gentoo.range(1, Number.POSITIVE_INFINITY))
+					.filter(isPrime)
+					.limit(100)
+					.reduce((memo, val) => memo + val, 0)
+					.value()
+
+			document.write(sum);
+		</script>
+	</body>
+</html>
+

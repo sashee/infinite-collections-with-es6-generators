@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<style>
+			pre {
+				background-color: rgb(239, 240, 241);
+			}
+		</style>
+	</head>
+	<body>
+		<p>An infinite collection using iterators:</p>
+		<pre>
+			var naturalNums = {
+				[Symbol.iterator]: (()=>{
+					let i = 0;
+					return {
+						next: () => {
+							return {done: false, value: i++};
+						}
+					}
+				})
+			};
+
+			for(let i of naturalNums){
+				if(i > 10) break; // Don't forget to terminate!
+				document.write(i+"&lt;br/&gt;");
+			}
+		
+		</pre>
+		<script>
+			var naturalNums = {
+				[Symbol.iterator]: (()=>{
+					let i = 0;
+					return {
+						next: () => {
+							return {done: false, value: i++};
+						}
+					}
+				})
+			};
+
+			for(let i of naturalNums){
+				if(i > 10) break; // Don't forget to terminate!
+				document.write(i+"<br/>");
+			}
+		</script>
+	</body>
+</html>

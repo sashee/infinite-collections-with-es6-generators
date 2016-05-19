@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<style>
+			pre {
+				background-color: rgb(239, 240, 241);
+			}
+		</style>
+	</head>
+	<body>
+		<p>An infinite collection using generators:</p>
+		<pre>
+			var naturalNums = function* (){
+				let i = 0;
+				while(true){
+					yield i++;
+				}
+			}
+
+			for(let i of naturalNums()){
+				if(i > 10) break;
+				document.write(i+"&lt;br/&gt;");
+			}
+		</pre>
+		<script>
+			var naturalNums = function* (){
+				let i = 0;
+				while(true){
+					yield i++;
+				}
+			}
+
+			for(let i of naturalNums()){
+				if(i > 10) break;
+				document.write(i+"<br/>");
+			}
+		</script>
+	</body>
+</html>
+
