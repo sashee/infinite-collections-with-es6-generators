@@ -2,6 +2,8 @@
 
 This repo contains some demonstration code samples on how to use ES6 generators.
 
+Read more at https://advancedweb.hu/2016/05/31/infinite-collections-with-es6-generators/ .
+
 ### Iterators
 
 Hand-creating iterators requires boilerplate, but it is the basis for generators. You can create infinite collections easily.
